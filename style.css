@@ -1,0 +1,175 @@
+*, html {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+body{
+    width: 100vw;
+    height: 100vh;
+    display: grid;
+    grid: auto 1fr / 1fr 4fr;
+    grid-template-areas: 
+    "menu header"
+    "menu article";
+}
+
+div{
+    border: 1px solid rgba(0, 0, 0, 0);
+}
+.header{
+    display: grid;
+    align-items: center;
+    justify-items: center;
+    grid: repeat(2, 1fr) / 1fr ;
+    grid-area: header;
+    background-color: rgba(239, 245, 228, 0.877);
+    grid-template-areas: 
+    "tp"
+    "bt";
+    
+
+}
+.header .top{
+    display: grid;
+    align-items: center;
+    justify-items: center;
+    grid-area: tp;
+    grid: 1fr / repeat(14, 1fr) ;
+    gap: 20px;
+    grid-template-areas: 
+    ". s sb sb sb sb sb . . . no pp ac .";
+}
+.header .bottom{
+    display: grid;
+    align-items: center;
+    justify-items: center;
+    grid-area: bt;
+    grid: 1fr / repeat(14, 1fr) ;
+    gap: 20px;
+    grid-template-areas: 
+    ". bpp gr . . . . . . . n u sh .";
+    
+}
+.search{
+    grid-area: s;
+    width: 20px;
+    height: 20px;
+    background-color: blue;
+    
+}
+.searchbar{
+    grid-area: sb;
+    width: 400px;
+    height: 25px;
+    border-radius: 10px;
+    border: none;
+    background-color: blue;
+
+}
+.notification{
+    grid-area: no;
+    width: 20px;
+    height: 20px;
+    background-color: blue;
+}
+.pp{
+    grid-area: pp;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: blue;
+}
+.account{
+    grid-area: ac;
+    white-space: nowrap;
+}
+.bigpp{
+    grid-area: bpp;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background-color: blue;
+}
+.greet{
+    display: grid;
+    grid: 1fr 1fr / 1fr ;
+    grid-area: gr;
+    gap: 15px;
+}
+.hello{
+    
+}
+.profile{
+    white-space: nowrap;
+}
+.new{
+    grid-area: n;
+}
+.upload{
+    grid-area: u;
+}
+.share{
+    grid-area: sh;
+}
+button{
+    height: 30px;
+    width: 80px;
+    border-radius: 15px;
+    border: 1px solid rgba(6, 37, 104, 0);
+    padding: 5px;
+    background-color: rgba(41, 207, 180, 0.87);
+
+}
+
+
+.menu {
+    grid-area: menu;
+    background-color: rgba(98, 108, 194, 0.596);
+    width: 100%;
+    display: grid;
+    align-items: center;
+    justify-items: left;
+    justify-content: space-around;
+    grid: repeat(auto-fit, minmax(0px, max-content)) / 1fr;
+    padding: 30px 0px 0px 30px;
+    gap: 50px;
+    
+}
+.menu > div > div > div{
+width: 20px;
+height: 20px;
+background-color: rgba(224, 126, 46, 0.822);
+}
+.menu .dash{
+    display: grid;
+    grid: 1fr / auto auto;
+}
+.menu .dash > div {
+    width: 30px;
+    height: 30px;
+    background-color: rgba(224, 126, 46, 0.822);  
+}
+.menu > div{
+    display: grid;
+    grid: repeat(auto-fit, minmax(0px, auto)) / 1fr;
+    gap: 15px;
+    align-items: center;
+    justify-items: start;
+}
+.menu > div > div{
+    display: grid;
+    grid: 1fr / auto auto;
+    gap: 15px;
+    align-items: center;
+}
+.article{
+    grid-area: article;
+    background-color: rgb(67, 204, 120);
+    width: 100%;
+    height: auto;
+    display: grid;
+    grid:repeat(2, 1fr) / 1fr auto;
+    
+
+}
