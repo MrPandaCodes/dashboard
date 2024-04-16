@@ -5,8 +5,8 @@
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 body{
-    width: 100vw;
-    height: 100vh;
+    width: 100%;
+    height: 100%;
     display: grid;
     grid: auto 1fr / 1fr 4fr;
     grid-template-areas: 
@@ -23,11 +23,12 @@ div{
     justify-items: center;
     grid: repeat(2, 1fr) / 1fr ;
     grid-area: header;
-    background-color: rgba(239, 245, 228, 0.877);
+    background-color: rgb(255, 255, 255);
+    box-shadow: 5px 5px 20px 0px rgb(161, 157, 157);
     grid-template-areas: 
     "tp"
     "bt";
-    
+    padding-bottom: 15px;
 
 }
 .header .top{
@@ -35,10 +36,9 @@ div{
     align-items: center;
     justify-items: center;
     grid-area: tp;
-    grid: 1fr / repeat(14, 1fr) ;
+    grid: ". s sb sb sb sb sb sb . . no pp ac ." max-content 
+    / repeat(auto-fit, minmax(0px, max-content));
     gap: 20px;
-    grid-template-areas: 
-    ". s sb sb sb sb sb . . . no pp ac .";
 }
 .header .bottom{
     display: grid;
@@ -60,7 +60,6 @@ div{
 }
 .searchbar{
     grid-area: sb;
-    width: 400px;
     height: 25px;
     border-radius: 10px;
     border: none;
@@ -118,14 +117,15 @@ button{
     border-radius: 15px;
     border: 1px solid rgba(6, 37, 104, 0);
     padding: 5px;
-    background-color: rgba(41, 207, 180, 0.87);
+    background-color: #1992d4;
 
 }
 
 
 .menu {
     grid-area: menu;
-    background-color: rgba(98, 108, 194, 0.596);
+    background-color: #1992d4;
+    color: #ffffff;
     width: 100%;
     display: grid;
     align-items: center;
@@ -139,7 +139,7 @@ button{
 .menu > div > div > div{
 width: 20px;
 height: 20px;
-background-color: rgba(224, 126, 46, 0.822);
+background-color: rgb(255, 255, 255);
 }
 .menu .dash{
     display: grid;
@@ -148,7 +148,7 @@ background-color: rgba(224, 126, 46, 0.822);
 .menu .dash > div {
     width: 30px;
     height: 30px;
-    background-color: rgba(224, 126, 46, 0.822);  
+    background-color: rgb(255, 255, 255);  
 }
 .menu > div{
     display: grid;
@@ -165,11 +165,122 @@ background-color: rgba(224, 126, 46, 0.822);
 }
 .article{
     grid-area: article;
-    background-color: rgb(67, 204, 120);
+    background-color: #e2e8f0;
     width: 100%;
     height: auto;
     display: grid;
-    grid:repeat(2, 1fr) / 1fr auto;
+    grid:
+    "prj an" max-content
+    "prj tr" max-content  
+    / 1fr auto;
+    white-space: pre-line;
+    padding: 30px;
+    gap: 30px;
     
+}
+.projects{
+    display: grid;
+    grid: auto 1fr / 1fr;
+    grid-area: prj;
+    gap: 30px;
+}
+.project-list > .prj {
+    display: grid;
+    grid: auto max-content / 1fr;
+    background-color: rgb(255, 255, 255);
+    border-left: 10px solid #f0b429;
+    border-radius: 10px;
+    padding: 30px;
+    box-shadow: 5px 5px 20px 0px rgb(161, 157, 157);
+}
+.project-list .prj.buttons {
+    display: grid;
+    grid: 1fr / 1fr;
+    grid-auto-flow: column;
+    justify-items: end;
+    gap: 20px;
+    
+}
+.project-list .prj.buttons button {
+    width: 30px;
+    height: 15px;
+    border-radius: 5px;
+    
+}
+
+.prj p{
+    max-height: 10ch;
+    max-width: 40ch;
+    overflow: hidden;
+}
+.prj.text{
+    display: grid;
+    padding-bottom: 30px;
+}
+.project-list {
+    display: grid;
+    grid: repeat(auto-fit, minmax(0px, auto)) / repeat(2, 1fr);
+    gap: 50px;
+}
+
+.announcements{
+    display: grid;
+    grid: auto 1fr / 1fr;
+    grid-area: an;
+    gap: 30px;
+    
+}
+.topics {
+    display: grid;
+    grid: repeat(auto-fit, minmax(0px,max-content)) / 1fr;
+    gap: 10px;
+    align-items: center;
+    justify-content:center;
+    border: none;
+    border-radius: 10px;
+    background-color: rgb(255, 255, 255);
+    box-shadow: 5px 5px 20px 0px rgb(161, 157, 157);
+    padding: 30px;
+    
+}
+.topics > div {
+    display: grid;
+    padding-bottom: 15px;
+    border-bottom: 2px solid rgb(155, 143, 143);
+}
+.announcements div {
+    width: fit-content;
+    height: auto;
+}
+.announcements p {
+    max-height: 10ch;
+    max-width: 40ch;
+    overflow: hidden;
+}
+.trending{
+    display: grid;
+    grid: repeat(auto-fit, minmax(0px,max-content)) / 1fr;
+    grid-area: tr;
+    gap: 30px;
+
+}
+.trends{
+    display: grid;
+    grid: repeat(auto-fit, minmax(0px,max-content)) / 1fr;
+    gap: 30px;
+    background-color: rgb(255, 255, 255);
+    box-shadow: 5px 5px 20px 0px rgb(161, 157, 157);
+    border-radius: 10px;
+    padding: 30px;
+}
+.trends .person {
+    display: grid;
+    grid: "pp detail" max-content / max-content;
+    gap: 15px;
+    align-items: center;
+
+}
+.trends .person .detail{
+    display: grid;
 
 }
