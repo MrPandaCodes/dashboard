@@ -27,6 +27,9 @@ body{
 div{
     border: 1px solid rgba(0, 0, 0, 0);
 }
+p{
+    white-space: normal;
+}
 .header{
     display: grid;
     align-items: center;
@@ -65,14 +68,12 @@ div{
 }
 .search{
     grid-area: s;
-    width: 20px;
-    height: 20px;
-    background-color: blue;
-    
+    width: 30px;
+    height: 30px;
 }
 .searchbar{
     grid-area: sb;
-    height: 25px;
+    height: 30px;
     width: 100%;
     border-radius: 10px;
     border: none;
@@ -81,9 +82,8 @@ div{
 }
 .notification{
     grid-area: no;
-    width: 20px;
-    height: 20px;
-    background-color: blue;
+    width: 30px;
+    height: 30px;
 }
 .pp{
     grid-area: pp;
@@ -136,16 +136,44 @@ div{
     grid-area: sh;
 }
 button{
-    height: 30px;
-    width: 80px;
-    border-radius: 15px;
+    background-color: var(--main-clr);
     border: 1px solid rgba(6, 37, 104, 0);
     padding: 5px;
-    background-color: var(--main-clr);
+    
+}
+.projects .prj button{
+    color: #ffffff;
+    font-size: var(--font-mid);
+    width: 40px;
+    height: 40px;
+    border-radius: 5px;
+    font-weight: 900;
+    box-shadow: 0px 0px 10px 2px var(--rd-sub-clr);
+}
+.projects .prj button img{
+    filter: invert(100%) sepia(1%) saturate(0%) hue-rotate(207deg) brightness(107%) contrast(102%);
+    position: relative;
+}
+.projects .prj button img::before{
+    content: "";
+    display: block;
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    background-color: aqua;
+    z-index: 15658;
+}
+.bottom button{
+    color: #ffffff;
+    font-size: var(--font-mid);
+    width: 100px;
+    height: 40px;
+    border-radius: 15px;
+    font-weight: 900;
+    box-shadow: 0px 0px 10px 2px var(--rd-sub-clr);
+    
 
 }
-
-
 .menu {
     grid-area: menu;
     background-color: var(--main-clr);
@@ -206,8 +234,8 @@ color: #f7fee7;
     height: auto;
     display: grid;
     grid:
-    "prj an" max-content
-    "prj tr" max-content  
+    "prj an" auto
+    "prj tr" auto
     / 1fr auto;
     white-space: pre-line;
     padding: 30px;
@@ -238,12 +266,7 @@ color: #f7fee7;
     gap: 20px;
     
 }
-.project-list .prj.buttons button {
-    width: 30px;
-    height: 15px;
-    border-radius: 5px;
-    
-}
+
 
 .prj p{
     max-height: 10ch;
@@ -256,8 +279,8 @@ color: #f7fee7;
 }
 .project-list {
     display: grid;
-    grid: repeat(auto-fit, minmax(0px, auto)) / repeat(2, 1fr);
-    gap: 50px;
+    grid: repeat(auto-fit, minmax(0px, auto)) / repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
 }
 
 .announcements{
@@ -305,7 +328,7 @@ color: #f7fee7;
 .trends{
     display: grid;
     grid: repeat(auto-fit, minmax(0px,max-content)) / 1fr;
-    gap: 30px;
+    gap: 15px;
     background-color: rgb(255, 255, 255);
     box-shadow: 5px 5px 20px 0px rgb(161, 157, 157);
     border-radius: 10px;
